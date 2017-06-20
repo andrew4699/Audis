@@ -1,0 +1,248 @@
+*, *:focus {
+  box-sizing: border-box;
+  outline: none; }
+
+body {
+  background: #191A20;
+  font: 300 16px 'Roboto', Helvetica;
+  color: white;
+  margin: 0; }
+
+a {
+  text-decoration: none;
+  color: inherit; }
+
+a:hover {
+  text-decoration: underline; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0px; }
+
+.special_vCenter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  height: 100%; }
+
+#wrapper {
+  display: flex;
+  height: 100vh; }
+
+#loader {
+  display: none; }
+
+#outline {
+  stroke-dasharray: 2.42777px, 242.77666px;
+  stroke-dashoffset: 0;
+  animation: anim 1.6s linear infinite; }
+
+@keyframes anim {
+  12.5% {
+    stroke-dasharray: 33.98873px, 242.77666px;
+    stroke-dashoffset: -26.70543px; }
+  43.75% {
+    stroke-dasharray: 84.97183px, 242.77666px;
+    stroke-dashoffset: -84.97183px; }
+  100% {
+    stroke-dasharray: 2.42777px, 242.77666px;
+    stroke-dashoffset: -240.34889px; } }
+#player {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 70vh;
+  margin: auto; }
+  #player > audio {
+    display: none; }
+  #player #banner {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    font-size: 12px;
+    vertical-align: middle; }
+    #player #banner span {
+      display: inline-block;
+      vertical-align: bottom;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none; }
+      #player #banner span.title {
+        text-transform: uppercase;
+        font-weight: 100;
+        font-size: 24px;
+        margin-right: 10px; }
+        #player #banner span.title:hover {
+          cursor: default; }
+      #player #banner span.name {
+        background: white;
+        font-size: 18px;
+        color: #191A20;
+        padding: 5px 20px;
+        vertical-align: top;
+        transition: background 0.3s, color 0.3s; }
+        #player #banner span.name:hover {
+          background: #2578CF;
+          color: white;
+          cursor: pointer; }
+  #player #title {
+    position: absolute;
+    bottom: 20px;
+    left: 0px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 100;
+    font-size: 32px;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; }
+  #player #bars {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    position: absolute;
+    bottom: 100px;
+    width: calc(100% - 200px); }
+    #player #bars > div {
+      flex: 1;
+      background: white;
+      will-change: height; }
+      #player #bars > div:not(:last-child) {
+        margin-right: 8px; }
+
+#choose {
+  display: none;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  background: white;
+  text-align: center;
+  color: black;
+  width: 100%;
+  padding: 20px 0px;
+  z-index: 99999;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+  #choose > h1 {
+    text-transform: uppercase;
+    font-weight: 100;
+    font-size: 48px;
+    color: #424242; }
+  #choose:hover {
+    cursor: pointer; }
+  #choose .inner {
+    display: none;
+    height: calc(100% - 128px); }
+    #choose .inner > div {
+      display: flex;
+      flex-direction: column; }
+      #choose .inner > div:first-child {
+        flex: 2;
+        border-right: 1px solid lightgray;
+        padding-right: 20px; }
+        #choose .inner > div:first-child > div:first-child {
+          border-bottom: 1px solid lightgray; }
+          #choose .inner > div:first-child > div:first-child label {
+            border: 1px solid #2578CF;
+            background: none;
+            font: inherit;
+            color: #2578CF;
+            padding: 7px 20px;
+            transition: background 0.3s, color 0.3s; }
+            #choose .inner > div:first-child > div:first-child label:hover {
+              background: #2578CF;
+              color: white;
+              cursor: pointer; }
+          #choose .inner > div:first-child > div:first-child input[type="file"] {
+            display: none; }
+        #choose .inner > div:first-child > div:last-child {
+          padding-top: 10px; }
+      #choose .inner > div > div {
+        flex: 1; }
+        #choose .inner > div > div > i {
+          display: inline-block;
+          font-size: 80px;
+          color: black;
+          margin-bottom: 5px; }
+        #choose .inner > div > div > h2 {
+          font-weight: 100;
+          font-size: 32px;
+          color: gray;
+          margin-bottom: 20px; }
+        #choose .inner > div > div > button {
+          border: 1px solid #2578CF;
+          background: none;
+          font: inherit;
+          color: #2578CF;
+          padding: 7px 20px;
+          transition: background 0.3s, color 0.3s; }
+          #choose .inner > div > div > button:hover {
+            background: #2578CF;
+            color: white;
+            cursor: pointer; }
+        #choose .inner > div > div > input {
+          border: none;
+          background: #F3F3F3;
+          font: inherit;
+          font-size: 24px;
+          color: #424242;
+          width: 90%;
+          padding: 12px 15px;
+          margin-bottom: 10px; }
+  #choose #search_results {
+    padding: 0px 10px; }
+    #choose #search_results > div {
+      display: flex; }
+      #choose #search_results > div:not(:last-child) {
+        margin-bottom: 7px; }
+      #choose #search_results > div:hover {
+        background: #F3F3F3; }
+      #choose #search_results > div:active {
+        background: #EBEBEB; }
+      #choose #search_results > div > img {
+        display: inline-block;
+        flex: 1;
+        width: 180px;
+        height: calc(180px * 0.5625);
+        margin-right: 10px;
+        vertical-align: middle; }
+      #choose #search_results > div > div {
+        flex: 4;
+        text-align: left;
+        padding: 10px;
+        margin: auto; }
+        #choose #search_results > div > div > h3 {
+          font-weight: 300;
+          font-size: 18px;
+          color: #424242; }
+        #choose #search_results > div > div > h4 {
+          font-weight: 300;
+          font-size: 16px;
+          color: #878787; }
+  #choose #chooseClose {
+    display: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-weight: 100;
+    font-size: 48px;
+    color: gray; }
+    #choose #chooseClose:hover {
+      cursor: pointer; }
+  #choose.open {
+    height: 100vh;
+    padding: 20px; }
+    #choose.open > h1 {
+      margin-bottom: 30px; }
+    #choose.open:hover {
+      cursor: default; }
+    #choose.open .inner {
+      display: flex; }
+    #choose.open #chooseClose {
+      display: block; }
+
+/*# sourceMappingURL=main.css.map */

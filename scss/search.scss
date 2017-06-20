@@ -1,0 +1,251 @@
+#choose
+{
+	display: none;
+	
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+
+	background: white;
+
+	text-align: center;
+	color: black;
+
+	width: 100%;
+
+	padding: 20px 0px;
+
+	z-index: 99999;
+
+	@include user-select(none);
+
+	> h1
+	{
+		text-transform: uppercase;
+		font-weight: 100;
+		font-size: 48px;
+		color: $DARK_GRAY_MAIN;
+	}
+
+	&:hover
+	{
+		cursor: pointer;
+	}
+
+	.inner
+	{
+		@mixin button()
+		{
+			border: 1px solid $BLUE_MAIN;
+
+			background: none;
+
+			font: inherit;
+			color: $BLUE_MAIN;
+
+			padding: 7px 20px;
+
+			transition: background 0.3s, color 0.3s;
+
+			&:hover
+			{
+				background: $BLUE_MAIN;
+
+				color: white;
+
+				cursor: pointer;
+			}
+		}
+		
+		display: none;
+
+		height: calc(100% - 128px);
+
+		> div
+		{
+			display: flex;
+			flex-direction: column;
+
+			&:first-child
+			{
+				flex: 2;
+
+				border-right: 1px solid lightgray;
+
+				padding-right: 20px;
+
+				> div:first-child /* Upload Song */
+				{
+					border-bottom: 1px solid lightgray;
+
+					label
+					{
+						@include button();
+					}
+
+					input[type="file"]
+					{
+						display: none;
+					}
+				}
+
+				> div:last-child /* Web Search */
+				{
+					padding-top: 10px;
+				}
+			}
+
+			> div
+			{
+				flex: 1;
+
+				> i
+				{
+					display: inline-block;
+
+					font-size: 80px;
+					color: black;
+
+					margin-bottom: 5px;
+				}
+
+				> h2
+				{
+					font-weight: 100;
+					font-size: 32px;
+					color: gray;
+
+					margin-bottom: 20px;
+				}
+
+				> button
+				{
+					@include button();
+				}
+
+				> input
+				{
+					border: none;
+
+					background: #F3F3F3;
+
+					font: inherit;
+					font-size: 24px;
+					color: $DARK_GRAY_MAIN;
+
+					width: 90%;
+
+					padding: 12px 15px;
+					margin-bottom: 10px;
+				}
+			}
+		}
+	}
+
+	#search_results
+	{
+		padding: 0px 10px;
+
+		> div
+		{
+			display: flex;
+
+			&:not(:last-child)
+			{
+				margin-bottom: 7px;
+			}
+
+			&:hover
+			{
+				background: #F3F3F3;
+			}
+
+			&:active
+			{
+				background: #EBEBEB;
+			}
+
+			> img
+			{
+				display: inline-block;
+				flex: 1;
+
+				width: 180px;
+				height: calc(180px * 0.5625);
+
+				margin-right: 10px;
+
+				vertical-align: middle;
+			}
+
+			> div
+			{
+				flex: 4;
+
+				text-align: left;
+
+				padding: 10px;
+				margin: auto;
+
+				> h3
+				{
+					font-weight: 300;
+					font-size: 18px;
+					color: $DARK_GRAY_MAIN;
+				}
+
+				> h4
+				{
+					font-weight: 300;
+					font-size: 16px;
+					color: #878787;
+				}
+			}
+		}
+	}
+
+	#chooseClose
+	{
+		display: none;
+
+		position: absolute;
+		top: 20px;
+		right: 20px;
+
+		font-weight: 100;
+		font-size: 48px;
+		color: gray;
+
+		&:hover
+		{
+			cursor: pointer;
+		}
+	}
+
+	&.open
+	{
+		height: 100vh;
+
+		padding: 20px;
+
+		> h1
+		{
+			margin-bottom: 30px;
+		}
+
+		&:hover
+		{
+			cursor: default;
+		}
+
+		.inner
+		{
+			display: flex;
+		}
+
+		#chooseClose
+		{
+			display: block;
+		}
+	}
+}

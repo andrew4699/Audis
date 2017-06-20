@@ -1,0 +1,22 @@
+$BLUE_MAIN: #2578CF;
+$BLUE_SUPPORT: #43A6DF;
+$BLUE_LIGHT: #94D8FF;
+
+$BLACK_FANCY: #191A20;
+$DARK_GRAY_MAIN: #424242;
+
+$RED_MAIN: #AA3939;
+
+@mixin user-select($val)
+{
+	-webkit-user-select: $val;
+	-moz-user-select: $val;
+	-ms-user-select: $val;
+	user-select: $val;
+}
+
+@import "../scss/page";
+@import "../scss/loader";
+
+@import "../scss/player";
+@import "../scss/search";
